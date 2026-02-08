@@ -67,10 +67,16 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        <Image
-          source={require("../assets/images/cert.png")}
-          style={styles.certImage}
-        ></Image>
+        <View style={styles.certContainer}>
+          <Image
+            source={require("../assets/images/cert.png")}
+            style={styles.certImage}
+          />
+          <Text style={styles.certText}>
+            CTU is ISO 9001 2015 certified by{"\n"}
+            TUV Rheinland Philippines, Inc.
+          </Text>
+        </View>
         <Image
           source={require("../assets/images/footerImage.png")}
           style={styles.footerImage}
@@ -146,20 +152,28 @@ const styles = StyleSheet.create({
   idContainer: {
     minWidth: 190,
   },
+  certContainer: {
+    position: "absolute",
+    bottom: 15,
+    right: 15,
+    alignItems: "center",
+    zIndex: 2,
+  },
   certImage: {
     width: 120,
     height: 60,
     resizeMode: "cover",
-    position: "absolute",
-    bottom: 15,
-    right: 15,
     borderColor: "#000",
     borderWidth: 1,
-    zIndex: 2,
+  },
+  certText: {
+    fontSize: 8,
+    color: "white",
+    marginTop: 2, 
   },
   signature: {
     width: 90,
-    height: 50,
+    height: 30,
   },
   footerImage: {
     position: "absolute",
